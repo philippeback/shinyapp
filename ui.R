@@ -30,6 +30,10 @@ shinyUI(fluidPage(
     
     # Show a plot of the generated distribution
     mainPanel(
+      
+      #http://solarscience.msfc.nasa.gov/SunspotCycle.shtml
+      #http://solarscience.msfc.nasa.gov/greenwch.shtml
+      
       textOutput("dateRangeText"),
       plotOutput("tsPlot"),
       plotOutput("distPlot")
