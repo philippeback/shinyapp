@@ -21,7 +21,8 @@ shinyUI(fluidPage(
                   "Number of bins:",
                   min = 1,
                   max = 50,
-                  value = 30)
+                  value = 30),
+      includeMarkdown("explain.md")
       
     ),
     
@@ -29,7 +30,7 @@ shinyUI(fluidPage(
     mainPanel(
       
     
-      includeMarkdown("explain.md"),
+      
       textOutput("dateRangeText"),
       plotOutput("tsPlot"),
       plotOutput("distPlot")

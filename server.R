@@ -15,7 +15,7 @@ shinyServer(function(input, output) {
          col = 'orange', 
          border = 'white',
          xlab="Observed number of Sunspots",
-         title="Histogram of SSN")
+         main="Histogram of SSN")
   })
  
   output$dateRangeText  <- renderText({
@@ -32,7 +32,10 @@ shinyServer(function(input, output) {
     x <- data$x
     y <- data$y
 
-    plot(x,y,pch=20)
+    plot(x,y,pch=20, 
+         main="Average number of sun spots over time",
+         xlab="time",
+         ylab="SSN")
     
     fit<-lm(y ~ x)
     abline(fit, col="red", lwd="4")
