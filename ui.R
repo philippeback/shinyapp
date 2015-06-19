@@ -1,4 +1,5 @@
 library(shiny)
+require(markdown)
 
 shinyUI(fluidPage(
   
@@ -28,9 +29,7 @@ shinyUI(fluidPage(
     
    
     mainPanel(
-      
-    
-      
+
       textOutput("dateRangeText"),
       plotOutput("tsPlot"),
       plotOutput("distPlot")
