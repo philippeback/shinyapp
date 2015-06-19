@@ -4,6 +4,7 @@ library(lubridate)
 library(stringr)
 
 sunspots <- read.table('data/spot_num.txt',header=TRUE)
+all_years=unique(sunspots[,1])
 sunspots[,1]<-as.factor(sunspots[,1])
 sunspots[,2]<-as.factor(sunspots[,2])
 smry_SSN<-summary(sunspots)[,3]

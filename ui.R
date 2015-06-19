@@ -1,22 +1,20 @@
 library(shiny)
 
-
 shinyUI(fluidPage(
   
-  # Application title
   titlePanel("Sunspotter"),
 
   sidebarLayout(
     sidebarPanel(
       selectInput('startYear',
                   'Start Year',
-                  as.character(sunspots$YEAR),
-                  selected=as.character(sunspots$YEAR[1]),
+                  as.character(all_years),
+                  selected=as.character(all_years[1]),
                   selectize=FALSE),
       
       selectInput('endYear','End Year',
-                  as.character(sunspots$YEAR),
-                  selected=as.character(sunspots$YEAR[-1]),
+                  as.character(all_years),
+                  selected=as.character(all_years[-1]),
                   selectize=FALSE),
                 
       sliderInput("bins",
@@ -25,15 +23,13 @@ shinyUI(fluidPage(
                   max = 50,
                   value = 30)
       
-      # dateRangeInput("range", label = h3("Date range"))
     ),
     
-    # Show a plot of the generated distribution
+   
     mainPanel(
       
-      #http://solarscience.msfc.nasa.gov/SunspotCycle.shtml
-      #http://solarscience.msfc.nasa.gov/greenwch.shtml
-      
+    
+      includeMarkdown("explain.md"),
       textOutput("dateRangeText"),
       plotOutput("tsPlot"),
       plotOutput("distPlot")
